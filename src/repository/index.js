@@ -2,27 +2,30 @@ const { request } = require("#http");
 const { packet } = require("#model/packet");
 const { parser } = require("#helpers/dom");
 
-const SELECTOR_ROW = "tbody > tr";
-const SELECTOR_COLUMN = "td";
+const SELECTOR_ROWS = "tbody > tr";
+const SELECTOR_COLUMNS = "td";
 const ENDPOINT = "/siteInstitucional/tracking_dev.jad?cte=";
+const EMPTY = 1;
 
-async function findPacket(cte = "") {
-  const response = await request(`${ENDPOINT}${cte}`);
+async function findPacket(packet_code) {
+  const response = await request(`${ENDPOINT}${packet_code}`);
+  const rows = parser(response.data).querySelectorAll(SELECTOR_ROWS);
   const events = [];
-  const promise = new Promise(async (resolve, reject) => {
-    const rows = parser(response.data).querySelectorAll(SELECTOR_ROW);
+
+  return new Promise(async (resolve, reject) => {
+    if (rows.length == EMPTY) {
+      reject();
+      return;
+    }
+
     rows.map((row) => {
-      try {
-        const columns = row.querySelectorAll(SELECTOR_COLUMN);
-        const packet_model = packet(columns);
-        events.push(packet_model);
-      } catch (error) {
-        reject(error);
-      }
+      const columns = row.querySelectorAll(SELECTOR_COLUMNS);
+      const packet_model = packet(columns);
+      events.push(packet_model);
     });
+
     resolve(events);
   });
-  return promise;
 }
 
 module.exports = { findPacket };

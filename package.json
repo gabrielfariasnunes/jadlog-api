@@ -12,8 +12,8 @@
     "#http": "./src/http/index.js",
     "#model/packet": "./src/model/packet.js",
     "#repository": "./src/repository/index.js",
-    "#server": "./src/server/index.js",
-    "#server/routes": "./src/server/routes.js"
+    "#server": "./bin/www/index.js",
+    "#server/routes": "./bin/www/routes.js"
   },
   "keywords": [],
   "author": "",
