@@ -1,0 +1,27 @@
+{
+  "name": "jadlog-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "imports": {
+    "#helpers/dom": "./src/helpers/dom.js",
+    "#helpers/env": "./src/helpers/env.js",
+    "#http": "./src/http/index.js",
+    "#model/packet": "./src/model/packet.js",
+    "#repository": "./src/repository/index.js",
+    "#server": "./src/server/index.js",
+    "#server/routes": "./src/server/routes.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "node-html-parser": "^6.1.5"
+  }
+}
