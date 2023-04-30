@@ -1,7 +1,7 @@
-#### Usage mode:
+#### Requisição:
 
-`GET http://127.0.0.1:9090/{insert_you_track_code}`
+`GET http://127.0.0.1:9090/{codigo_de_rastreio}`
 
-#### Running:
+#### Execução:
 
 `node ./index.js`
