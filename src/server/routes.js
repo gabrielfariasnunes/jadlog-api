@@ -1,16 +1,11 @@
+const { homePageController, findPacketController } = require("./controllers");
+
 const routes = require("express").Router();
-const { findPacket } = require("#repository");
 
-const RESPONSE_ERROR_MESSAGE = "Pacote não encontrado";
+const PARAM_PACKET_CODE = "/rastrear/:cte";
+const PARAM_HOME_PAGE = "/";
 
-routes.get("/:cte", (req, resp) => {
-  findPacket(req.params.cte)
-    .then((events) => {
-      resp.json(events);
-    })
-    .catch(() => {
-      resp.json(RESPONSE_ERROR_MESSAGE);
-    });
-});
+routes.get(PARAM_PACKET_CODE, findPacketController);
+routes.use(PARAM_HOME_PAGE, homePageController);
 
 module.exports = routes;
