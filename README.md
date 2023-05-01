@@ -80,3 +80,15 @@ npm run start
   "error": "Pacote não encontrado"
 }
 ```
+
+```mermaid
+graph TD;
+usuario-->servidor
+servidor-->usuario
+servidor-->repositorio
+repositorio-->servidor
+repositorio<-->sucesso
+repositorio-->falha
+repositorio<--lista de eventos-->sucesso
+repositorio<--sem resultados-->falha
+```
