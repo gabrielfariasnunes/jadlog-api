@@ -1,5 +1,5 @@
 const { request } = require("#http");
-const { packet } = require("#model/packet");
+const { package } = require("#model/package");
 const { parser } = require("#helpers/dom");
 
 const SELECTOR_ROWS = "tbody > tr";
@@ -19,7 +19,7 @@ async function findPacket(packet_code) {
 
     rows.map((row) => {
       const columns = row.querySelectorAll(SELECTOR_COLUMNS);
-      const packet_model = packet(columns);
+      const packet_model = package(columns);
       events.push(packet_model);
     });
 

@@ -1,7 +1,7 @@
 const SPLIT_SEPARATOR = "  ";
 const NOT_DOCUMENT = "Sem documento";
 
-const packet = (element) => {
+const package = (element) => {
   const dateHours = element[0].text.split(SPLIT_SEPARATOR);
   const data = dateHours[0].trim();
   const hora = dateHours[1].trim();
@@ -12,4 +12,4 @@ const packet = (element) => {
   return { data, hora, origem, status, destino, documento };
 };
 
-module.exports = { packet };
+module.exports = { package };

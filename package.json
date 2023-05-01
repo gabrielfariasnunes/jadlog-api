@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "node --watch ./index.js",
     "start": "node ./index.js"
   },
   "imports": {
     "#helpers/dom": "./src/helpers/dom.js",
     "#helpers/env": "./src/helpers/env.js",
     "#http": "./src/http/index.js",
-    "#model/packet": "./src/model/packet.js",
+    "#model/package": "./src/model/package.js",
     "#repository": "./src/repository/index.js",
     "#server": "./bin/www/index.js",
     "#server/routes": "./bin/www/routes.js"
