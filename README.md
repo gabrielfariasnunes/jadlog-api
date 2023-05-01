@@ -89,6 +89,6 @@ servidor-->repositorio
 repositorio-->servidor
 repositorio<-->sucesso
 repositorio-->falha
-repositorio<--lista de eventos-->sucesso
-repositorio<--sem resultados-->falha
+repositorio<--Resultados-->sucesso
+repositorio<--Pacote não encontrado-->falha
 ```
