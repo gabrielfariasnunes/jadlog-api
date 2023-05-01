@@ -80,11 +80,3 @@ npm run start
   "error": "Pacote não encontrado"
 }
 ```
-
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
