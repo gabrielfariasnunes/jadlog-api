@@ -1,13 +1,13 @@
 #### Requisição:
 
-```h
-GET http://127.0.0.1:9090/rastrear/{codigo_de_rastreio}
-```
-
 #### Execução:
 
 ```s
 npm run start
+```
+
+```h
+GET http://127.0.0.1:9090/rastrear/{codigo_de_rastreio}
 ```
 
 #### Pacote encontrado
